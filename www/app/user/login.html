@@ -1,0 +1,20 @@
+<ion-view>
+    <ion-header-bar class="bar bar-header bar-energized">
+        <h1 class="title">Login</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" overflow-scroll="false" has-bouncing="true">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-user placeholder-icon"></i>
+                <input type="tel" placeholder="Chapa" ng-model="vm.user.login">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="password" placeholder="Senha" ng-model="vm.user.password">
+            </label>
+            <label class="item item-input">
+                <input type="button" value="Entrar" data-ng-click="vm.login();">
+            </label>
+        </div>
+    </ion-content>
+</ion-view>

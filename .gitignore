@@ -1,0 +1,7 @@
+.DS_Store
+.editorconfig
+node_modules/
+platforms/
+plugins/
+www/lib
+!www/lib/webtree
