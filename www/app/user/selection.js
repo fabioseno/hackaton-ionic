@@ -2,15 +2,20 @@
 (function () {
     'use strict';
 
-    function ProfileSelection($location, userSession) {
+    function ProfileSelection($location, $timeout, userManager) {
         var vm = this;
 
-        vm.login = function (item) {
-            $location.path('/perfis');
+        vm.selectProfile = function (profile) {
+            userManager.setUserProfile(profile);
+
+            $timeout(function () {
+                $location.path('/requests');
+            }, 500);
+
         };
     }
 
-    ProfileSelection.$inject = ['$location', 'userSession'];
+    ProfileSelection.$inject = ['$location', '$timeout', 'userManager'];
 
     angular.module('app').controller('profileSelection', ProfileSelection);
 

@@ -1,18 +1,15 @@
 <ion-view>
     <ion-header-bar class="bar bar-header bar-energized">
-        <h1 class="title">Medicações</h1>
+        <h1 class="title">Perfil</h1>
     </ion-header-bar>
     <ion-content class="has-header" overflow-scroll="false" has-bouncing="true">
         <div class="list list-inset">
             <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Procurar" ng-model="search">
+                <input type="button" value="Vendas" data-ng-click="vm.selectProfile('V');">
             </label>
-        </div>
-        <div class="list">
-            <div class="item" data-ng-repeat="medicine in vm.medicines | orderBy : 'name' | filter : search | orderBy : 'medicine.name'" data-ng-click="vm.openItem(medicine);">
-                <h2 data-ng-bind="medicine.name"></h2>
-            </div>
+            <label class="item item-input">
+                <input type="button" value="Estoque" data-ng-click="vm.selectProfile('E');">
+            </label>
         </div>
     </ion-content>
 </ion-view>

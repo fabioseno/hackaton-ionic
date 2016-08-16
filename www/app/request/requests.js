@@ -2,23 +2,33 @@
 (function () {
     'use strict';
 
-    function Requests($location, userManager, toaster) {
+    function Requests($mdDialog, $location, userManager, toaster) {
         var vm = this;
 
-        vm.login = function () {
-            userManager.login(vm.user.login, vm.user.password).then(function (result) {
-                if (result.success) {
-                    $location.path('/perfis');
-                }
+        vm.loadRequests = function () {
 
-                toaster.show(result.message);
-            }, function (error) {
-                toaster.show(error);
+        };
+
+        vm.openSearchModal = function (ev) {
+            var confirm = $mdDialog.prompt().title('Buscar produto')
+                .textContent('Digite um SKU ou código pai.')
+                .placeholder('Código')
+                .ariaLabel('Código')
+                .initialValue('')
+                .targetEvent(ev)
+                .ok('ok')
+                .cancel('Cancelar');
+            
+            $mdDialog.show(confirm).then(function (result) {
+                alert(result);
+            }, function () {
             });
         };
+
+        vm.loadRequests();
     }
 
-    Requests.$inject = ['$location', 'userManager', 'toaster'];
+    Requests.$inject = ['$mdDialog', '$location', 'userManager', 'toaster'];
 
     angular.module('app').controller('requests', Requests);
 

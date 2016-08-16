@@ -50,6 +50,6 @@
     Config.$inject = ['$stateProvider', '$urlRouterProvider'];
     Run.$inject = ['$ionicPlatform'];
 
-    angular.module('app', ['ionic', 'sushi']).config(Config).run(Run);
+    angular.module('app', ['ionic', 'ngMaterial', 'sushi']).config(Config).run(Run);
 
 }());

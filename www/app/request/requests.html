@@ -1,18 +1,19 @@
 <ion-view>
     <ion-header-bar class="bar bar-header bar-energized">
-        <h1 class="title">Medicações</h1>
+        <h1 class="title">Solicitações</h1>
     </ion-header-bar>
-    <ion-content class="has-header" overflow-scroll="false" has-bouncing="true">
+    <ion-content layout-fill class="has-header" overflow-scroll="false" has-bouncing="true">
         <div class="list list-inset">
-            <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Procurar" ng-model="search">
+            <label class="item" data-ng-repeat="request in vm.requests">
+                <span data-ng-bind="request.createdBy"></span><br />
+                <span data-ng-bind="request.status"></span><br />
+                <span data-ng-bind="request.totalProdutos"></span><br />
+                <span data-ng-bind="request.grupo"></span>
             </label>
         </div>
-        <div class="list">
-            <div class="item" data-ng-repeat="medicine in vm.medicines | orderBy : 'name' | filter : search | orderBy : 'medicine.name'" data-ng-click="vm.openItem(medicine);">
-                <h2 data-ng-bind="medicine.name"></h2>
-            </div>
-        </div>
+
     </ion-content>
+    <md-button class="md-primary md-fab md-fab-bottom-right" data-ng-click="vm.openSearchModal($event);">
+        +
+    </md-button>
 </ion-view>

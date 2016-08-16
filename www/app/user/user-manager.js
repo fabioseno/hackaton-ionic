@@ -26,6 +26,10 @@
                 return currentUser;
             },
 
+            getUserProfile = function (profile) {
+                return profile;
+            },
+
             setUserProfile = function (profile) {
                 currentUser.selectedProfile = profile;
             };
@@ -33,6 +37,7 @@
         return {
             login: login,
             getCurrentUser: getCurrentUser,
+            getUserProfile: getUserProfile,
             setUserProfile: setUserProfile
         };
     }
