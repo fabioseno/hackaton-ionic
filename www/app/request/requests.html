@@ -5,7 +5,8 @@
     <ion-content layout-fill class="has-header" overflow-scroll="false" has-bouncing="true">
         <div class="list list-inset">
             <label class="item" data-ng-repeat="request in vm.requests">
-                <span data-ng-bind="request.createdBy"></span><br />
+                <span data-ng-bind="request.dataExibicao"></span><br />
+                <span data-ng-bind="request.usuarioCriacao"></span><br />
                 <span data-ng-bind="request.status"></span><br />
                 <span data-ng-bind="request.totalProdutos"></span><br />
                 <span data-ng-bind="request.grupo"></span>

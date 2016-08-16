@@ -2,11 +2,17 @@
 (function () {
     'use strict';
 
-    function Requests($mdDialog, $location, userManager, toaster) {
+    function Requests($mdDialog, $location, requestManager, userManager, toaster) {
         var vm = this;
 
         vm.loadRequests = function () {
-
+            var storeId = userManager.getCurrentUser().lojaId;
+            
+            requestManager.list(storeId).then(function (result) {
+                vm.requests = result;
+            }, function (error) {
+                toaster.show(error.message);
+            });
         };
 
         vm.openSearchModal = function (ev) {
@@ -18,7 +24,7 @@
                 .targetEvent(ev)
                 .ok('ok')
                 .cancel('Cancelar');
-            
+
             $mdDialog.show(confirm).then(function (result) {
                 alert(result);
             }, function () {
@@ -28,7 +34,7 @@
         vm.loadRequests();
     }
 
-    Requests.$inject = ['$mdDialog', '$location', 'userManager', 'toaster'];
+    Requests.$inject = ['$mdDialog', '$location', 'requestManager', 'userManager', 'toaster'];
 
     angular.module('app').controller('requests', Requests);
 

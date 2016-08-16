@@ -13,7 +13,7 @@
                     };
 
                 httpInvoker.invoke('user', 'login', { data: data }).then(function (result) {
-                    currentUser = result.data;
+                    currentUser = result.data.data;
                     defer.resolve(result.data);
                 }, function (error) {
                     defer.reject(error.data);
