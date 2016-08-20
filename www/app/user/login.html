@@ -1,20 +1,33 @@
-<ion-view>
-    <ion-header-bar class="bar bar-header bar-energized">
-        <h1 class="title">Login</h1>
-    </ion-header-bar>
+<ion-view class="bg-login">
     <ion-content class="has-header" overflow-scroll="false" has-bouncing="true">
-        <div class="list list-inset">
-            <label class="item item-input">
-                <i class="icon ion-user placeholder-icon"></i>
-                <input type="tel" placeholder="Chapa" ng-model="vm.user.login">
-            </label>
-            <label class="item item-input">
-                <i class="icon ion-key placeholder-icon"></i>
-                <input type="password" placeholder="Senha" ng-model="vm.user.password">
-            </label>
-            <label class="item item-input">
-                <input type="button" value="Entrar" data-ng-click="vm.login();">
-            </label>
+        <div class="login-container">
+            <div class="app-logo">
+                <img src="assets/img/img_logo.png" />
+            </div>
+
+            <div class="list list-inset list-login">
+                <label class="item item-input item-input-login">
+                    <img src="assets/img/img_user.png">
+                    <input type="tel" placeholder="Chapa" ng-model="vm.user.login">
+                </label>
+                <label class="item item-input item-input-login">
+                    <img src="assets/img/img_password.png">
+                    <input type="password" placeholder="Senha" ng-model="vm.user.password">
+                </label>
+
+                <label class="item item-button-login">
+                    <input class="login-button" type="button" value="Entrar" data-ng-click="vm.login();">
+                </label>
+            </div>
+            
+            <div class="texto-acesso">
+                <a href="#">Problemas com acesso?</a>
+            </div>
+            
+            <div class="agilize-logo">
+                <img src="assets/img/img_logo_agilize.png" />
+            </div>
+            
         </div>
     </ion-content>
 </ion-view>

@@ -1,5 +1,3 @@
-08:00 = [Serviços] Criação da API REST
-01:10 = [App] Criação de estrutura de projeto e integração da tela de login
-00:30 = [Serviços] Adição dos campos totalProdutos e grupo no documento de Solicitação e alteração no serviço de adição de produto
-00:20 = [Serviços] Correção de bugs de serviços
-01:30 = [App] Criação da tela de Solicitações
+01:10 = Criação de estrutura de projeto e integração da tela de login produto
+01:30 = Criação da tela de Solicitações
+14:32 - 16:10 - Layout da tela de login
