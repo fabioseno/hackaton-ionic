@@ -27,7 +27,7 @@
             },
 
             getUserProfile = function (profile) {
-                return profile;
+                return currentUser.selectedProfile;
             },
 
             setUserProfile = function (profile) {

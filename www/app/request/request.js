@@ -2,23 +2,25 @@
 (function () {
     'use strict';
 
-    function Request($location, userManager, toaster) {
+    function Request($stateParams, $location, requestManager, toaster) {
         var vm = this;
 
-        vm.login = function () {
-            userManager.login(vm.user.login, vm.user.password).then(function (result) {
-                if (result.success) {
-                    $location.path('/perfis');
-                }
-
-                toaster.show(result.message);
-            }, function (error) {
-                toaster.show(error);
-            });
+        vm.loadRequest = function (id) {
+            if (id) {
+                requestManager.get(id).then(function (result) {
+                    if (result.success) {
+                        vm.request = result.data;
+                    }
+                }, function (error) {
+                    toaster.show(error);
+                });
+            }
         };
+        
+        vm.loadRequest($stateParams.id);
     }
 
-    Request.$inject = ['$location', 'userManager', 'toaster'];
+    Request.$inject = ['$stateParams', '$location', 'requestManager', 'toaster'];
 
     angular.module('app').controller('request', Request);
 

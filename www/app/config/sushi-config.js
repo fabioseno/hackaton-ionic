@@ -44,6 +44,11 @@
                     url: '/solicitacoes/:id',
                     method: 'GET',
                     connectivityPolicy: 'ONLINE_DATA_ONLY'
+                },
+                delete: {
+                    url: '/solicitacoes/:id',
+                    method: 'DELETE',
+                    connectivityPolicy: 'ONLINE_DATA_ONLY'
                 }
             }
         },

@@ -3,16 +3,27 @@
         <h1 class="title">Solicitações</h1>
     </ion-header-bar>
     <ion-content layout-fill class="has-header" overflow-scroll="false" has-bouncing="true">
-        <div class="list list-inset">
-            <label class="item" data-ng-repeat="request in vm.requests">
-                <span data-ng-bind="request.dataExibicao"></span><br />
-                <span data-ng-bind="request.usuarioCriacao"></span><br />
-                <span data-ng-bind="request.status"></span><br />
-                <span data-ng-bind="request.totalProdutos"></span><br />
-                <span data-ng-bind="request.grupo"></span>
-            </label>
-        </div>
-
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools md-warn">Status</div>
+        </md-toolbar>
+        <md-content style="height: 400px;">
+            <section data-ng-repeat="(status, value) in vm.status">
+                <md-subheader class="md-primary">{{ value.name }}
+                </md-subheader>
+                <md-list>
+                    <md-list-item class="md-3-line request-item" data-ng-repeat="request in value.requests">
+                        <div class="md-list-item-text" layout="column" data-ng-click="vm.openRequest(request);">
+                            <div class="header">
+                                <span class="brand" data-ng-bind="request.dataExibicao | elapsedTime"></span>
+                                <span class="elapsed-time" data-ng-bind="request.grupo"></span>
+                            </div>
+                            <span data-ng-bind="request.totalProdutos"></span> Produto(s)
+                            Criado por: <p data-ng-bind="request.usuarioCriacao">{{ item.notes }}</p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </section>
+        </md-content>
     </ion-content>
     <md-button class="md-primary md-fab md-fab-bottom-right" data-ng-click="vm.openSearchModal($event);">
         +

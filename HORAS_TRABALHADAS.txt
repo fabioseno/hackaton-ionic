@@ -1,3 +1,6 @@
 01:10 = Criação de estrutura de projeto e integração da tela de login produto
 01:30 = Criação da tela de Solicitações
 14:32 - 16:10 - Layout da tela de login
+17:50 - 21:00 - Layout da tela de Solicitações
+
+11:11 - 
